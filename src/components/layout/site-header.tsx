@@ -6,14 +6,14 @@ import { siteConfig } from "@/lib/site-config";
 
 type NavCategory = { name: string; slug: string };
 
-const smallCaps = "text-[11px] uppercase tracking-[0.2em]";
+const smallCaps = "text-[11px] uppercase tracking-[0.12em] md:tracking-[0.2em]";
 
 export function SiteHeader({ categories }: { categories: NavCategory[] }) {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-paper">
-      <div className="mx-auto grid h-16 max-w-[1400px] grid-cols-3 items-center px-5 md:px-10">
+      <div className="mx-auto grid h-16 max-w-[1400px] grid-cols-[1fr_auto_1fr] items-center px-5 md:px-10">
         <div>
           <button
             type="button"
@@ -38,7 +38,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
           </form>
         </div>
 
-        <Link href="/" className="text-center font-heading text-2xl">
+        <Link href="/" className="whitespace-nowrap text-center font-heading text-[17px] sm:text-xl md:text-2xl">
           {siteConfig.name}
         </Link>
 
